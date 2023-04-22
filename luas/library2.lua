@@ -790,8 +790,8 @@ do
                 library.shared.ping = stats.Network:FindFirstChild("ServerStatsItem") and tostring(math.floor(stats.Network.ServerStatsItem["Data Ping"]:GetValue())) or "Unknown"
                 --
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-                if (tick() - Tick) > 0.15 then
-                    watermark_title.Text = string.format("Sipare |%s,  Fps = %u,  | "..GameName, library.shared.ping, library.shared.fps)
+                if (tick() - Tick) > 0.05 then
+                    watermark_title.Text = string.format("Sipare |Ping = %s,  Fps = %u,  | "..GameName, library.shared.ping, library.shared.fps)
                     window.watermark:UpdateSize()
                     Tick = tick()
                 end
