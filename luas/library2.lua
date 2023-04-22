@@ -4,7 +4,12 @@
 ]]
 -- // menu stuff
 local filename = "sipare"
-
+local images = {
+    valsat = "https://i.imgur.com/wpDRqVH.png",
+    valsat_cursor = "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png",
+    hue = "https://i.imgur.com/iEOsHFv.png",
+    gradient = ... -- hol on lmao
+}
 
 -- // Variables
 local ws = game:GetService("Workspace")
