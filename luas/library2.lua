@@ -8,7 +8,7 @@ local images = {
     valsat = "https://i.imgur.com/wpDRqVH.png",
     valsat_cursor = "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png",
     hue = "https://i.imgur.com/iEOsHFv.png",
-    gradient = ... -- hol on lmao
+    gradient = "https://raw.githubusercontent.com/drumour/sipare/main/images/gradient.png"
 }
 
 -- // Variables
@@ -874,7 +874,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
                     Visible = true,
                 })notification["notify__gradient"] = notify__gradient
                 --
-                utility:LoadImage(notify__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+                utility:LoadImage(notify__gradient, "gradient", images.gradient)
                 --
                 utility:Lerp(notify_outline, {Transparency = 1}, 0.25)
                 utility:Lerp(notify_inline, {Transparency = 1}, 0.25)
@@ -2252,7 +2252,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             Color = "textcolor"
         }
         --
-        utility:LoadImage(toggle__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(toggle__gradient, "gradient", images.gradient)
         --
         function toggle:get()
             return toggle.current
@@ -2352,7 +2352,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             if transp then
                 utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
             end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+            utility:LoadImage(colorpicker__gradient, "gradient", images.gradient)
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -2758,7 +2758,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
                 Color = "textcolor"
             }
             --
-            utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+            utility:LoadImage(keybind__gradient, "gradient", images.gradient)
             --
             function keybind:Shorten(string)
                 for i,v in pairs(shortenedInputs) do
@@ -2950,7 +2950,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
                             Visible = page.open
                         }, keybind.modemenu.drawings)
                         --
-                        utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+                        utility:LoadImage(keybind__gradient, "gradient", images.gradient)
                         --
                         for i,v in pairs({"Always", "Toggle", "Hold"}) do
                             local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -3105,7 +3105,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             Color = "textcolor"
         }
         --
-        utility:LoadImage(slider__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(slider__gradient, "gradient", images.gradient)
         --
         function slider:set(value)
             slider.current = math.clamp(math.round(value * slider.decimals) / slider.decimals, slider.min, slider.max)
@@ -3239,7 +3239,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             callback = p_callback
         end
         --
-        utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(button_gradient, "gradient", images.gradient)
         --
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X, section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X, section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -3360,7 +3360,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
                 Color = "textcolor"
             }
             --
-            utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+            utility:LoadImage(button_gradient, "gradient", images.gradient)
             --
             library.began[#library.began + 1] = function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X + (i == 2 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X - (i == 1 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -3464,7 +3464,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
         --
         utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(dropdown__gradient, "gradient", images.gradient)
         --
         function dropdown:Update()
             if dropdown.open and dropdown.holder.inline then
@@ -3720,7 +3720,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
         utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(multibox__gradient, "gradient", images.gradient)
         --
         function multibox:Update()
             if multibox.open and multibox.holder.inline then
@@ -4012,7 +4012,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             Color = "textcolor"
         }
         --
-        utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(keybind__gradient, "gradient", images.gradient)
         --
         function keybind:Shorten(string)
             for i,v in pairs(shortenedInputs) do
@@ -4210,7 +4210,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
                         Visible = page.open
                     }, keybind.modemenu.drawings)
                     --
-                    utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+                    utility:LoadImage(keybind__gradient, "gradient", images.gradient)
                     --
                     for i,v in pairs({"Always", "Toggle", "Hold"}) do
                         local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -4325,7 +4325,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
         if transp then
             utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
         end
-        utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(colorpicker__gradient, "gradient", images.gradient)
         --
         function colorpicker:Set(color, transp_val)
             if typeof(color) == "table" then
@@ -4702,7 +4702,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             if transp then
                 utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
             end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+            utility:LoadImage(colorpicker__gradient, "gradient", images.gradient)
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -5453,7 +5453,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             configLoader.buttons[i] = config_title
         end
         --
-        utility:LoadImage(configLoader_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(configLoader_gradient, "gradient", images.gradient)
         --
         function configLoader:Refresh()
             for i,v in pairs(configLoader.buttons) do
