@@ -8,7 +8,8 @@ local images = {
     valsat = "https://i.imgur.com/wpDRqVH.png",
     valsat_cursor = "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png",
     hue = "https://i.imgur.com/iEOsHFv.png",
-    gradient = "https://raw.githubusercontent.com/drumour/sipare/main/images/gradient.png"
+    gradient = "https://raw.githubusercontent.com/drumour/sipare/main/images/gradient.png",
+    trans = "https://i.imgur.com/ncssKbH.png"
 }
 
 -- // Variables
@@ -790,9 +791,9 @@ do
                 --
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
                 if (tick() - Tick) > 0.15 then
-                    watermark_title.Text = string.format("ZeeBot |%s,  Fps = %u,  | "..GameName, library.shared.ping, library.shared.fps)
+                    watermark_title.Text = string.format(info.name or info.Name --[[or info.Title or info.title]] .. " | Ping: %s,  Fps: %u, | "..GameName, library.shared.ping, library.shared.fps)
                     window.watermark:UpdateSize()
-                    --
+                    -- findmewatermark
                     Tick = tick()
                 end
             end)
@@ -4553,13 +4554,13 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
                                 Color = Color3.fromHSV(0, 0, 1 - colorpicker.current[4]),
                             }, colorpicker.holder.drawings);colorpicker.holder.transparency_cursor[3] = colorpicker_open_transparency_cursor_color
                             --
-                            utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/ncssKbH.png")
+                            utility:LoadImage(colorpicker_open_transparency_image, "transp", images.trans)
                             --utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/VcMAYjL.png")
                         end
                         --
-                        utility:LoadImage(colorpicker_open_picker_image, "valsat", "https://i.imgur.com/wpDRqVH.png")
-                        utility:LoadImage(colorpicker_open_picker_cursor, "valsat_cursor", "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png")
-                        utility:LoadImage(colorpicker_open_huepicker_image, "hue", "https://i.imgur.com/iEOsHFv.png")
+                        utility:LoadImage(colorpicker_open_picker_image, "valsat", images.valsat)
+                        utility:LoadImage(colorpicker_open_picker_cursor, "valsat_cursor", images.valsat_cursor)
+                        utility:LoadImage(colorpicker_open_huepicker_image, "hue", images.hue)
                         --
                         window.currentContent.frame = colorpicker_open_inline
                         window.currentContent.colorpicker = colorpicker
@@ -5103,7 +5104,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             Color = "accent"
         }
         --
-        utility:LoadImage(listbox_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        utility:LoadImage(listbox_gradient, "gradient", images.gradient)
         --
         function listbox:Refresh()
             for i = 1, #self.buttons do
