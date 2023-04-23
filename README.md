@@ -1,4 +1,8 @@
 # sipare
 stuff that im randomly making, fixing.
 
-![image](https://user-images.githubusercontent.com/131504997/233758050-5e1b6cb5-ded1-4813-a15b-606221b9753d.png)
+UPDATE: Added funne things
+
+
+https://user-images.githubusercontent.com/131504997/233869007-8f15d95c-fc61-4c23-8795-ee4270322cf8.mp4
+
