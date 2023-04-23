@@ -792,7 +792,7 @@ do
                 --
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
                 if (tick() - Tick) > 0.05 then
-                    watermark_title.Text = string.format("Sipare | Ping = %s, Fps = %u, | "..GameName, library.shared.ping, library.shared.fps)
+                    watermark_title.Text = string.format("Sipare | Ping = %s, Fps = %u, | "..GameName, library.shared.ping, library.shared.fps.." | "..os.date())
                     window.watermark:UpdateSize()
                     Tick = tick()
                 end
@@ -1841,7 +1841,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
             Color = "outline"
         }
         --
-        local multiSection_frame = utility:Create("Frame", {Vector2.new(1,1), multiSection_outline}, {
+        local Section_frame = utility:Create("Frame", {Vector2.new(1,1), multiSection_outline}, {
             Size = utility:Size(1, -2, 1, -2, multiSection_outline),
             Position = utility:Position(0, 1, 0, 1, multiSection_outline),
             Color = theme.darkcontrast,
